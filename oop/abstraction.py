@@ -1,58 +1,45 @@
 # When many classes must follow a common interface or method name, but implement it differently.
-# When NOT to Use Abstraction
-#You only need 1 class	Use a normal class
-#You don’t plan on inheriting	Don’t use abstractmethod
-#You don’t need strict structure	Use simple duck typing (Python is dynamic)
-# Real-World Example Scenarios
-#Scenario	Why Use Abstraction?
-#Payment gateways (Bkash, Stripe, PayPal)	All must implement pay() differently
-#Transport app (Car, Bike, Bus)	All must implement move() method
-#Social media bots (FacebookBot, InstagramBot)	All must implement post_message()
-#Game design (Enemy, Player, Boss)	All must have attack() or die() methods
-
 
 # Importing ABC (Abstract Base Class) and abstractmethod decorator from abc module
 from abc import ABC, abstractmethod
 
-# Creating an abstract class named 'Animal'
-# This class will act as a blueprint for all types of animals
-class Animal(ABC):
+# Creating an abstract class named 'transport'
+# This class will act as a blueprint for all types of transports
+class transport(ABC):
 
-    # Defining an abstract method named 'make_sound'
+
+    # Defining an abstract method named 'make_move'
     # Abstract methods don't have a body here — child classes must implement this
     @abstractmethod
-    def make_sound(self):
-        pass  # This means "do nothing" — no implementation here
+    def make_move(self):
+        pass
 
-# Creating a concrete class 'Dog' that inherits from the abstract class 'Animal'
-class Dog(Animal):
+# Creating a concrete class 'bus' that inherits from the abstract class 'transport'
+class bus(transport):
 
-    # Implementing the abstract method 'make_sound'
-    def make_sound(self):
-        print("Bark")  # Specific behavior for Dog
+    # Implementing the abstract method 'make_move'
+    def make_move(self):
+        print("East")
 
-# Creating another concrete class 'Cat' that also inherits from 'Animal'
-class Cat(Animal):
+# Creating a concrete class 'car' that inherits from the abstract class 'transport'
+class car(transport):
 
-    # Implementing the abstract method 'make_sound'
-    def make_sound(self):
-        print("Meow")  # Specific behavior for Cat
+    # Implementing the abstract method 'make_move'
+    def make_move(self):
+        print("West")
 
-# Creating another concrete class 'Cow'
-class Cow(Animal):
+# Creating a concrete class 'bike' that inherits from the abstract class 'transport'
+class bike(transport):
 
-    # Implementing the abstract method 'make_sound'
-    def make_sound(self):
-        print("Moo")  # Specific behavior for Cow
+    # Implementing the abstract method 'make_move'
+    def make_move(self):
+        print("North")
 
 # Creating objects of the concrete classes
-dog = Dog()  # Object of Dog
-cat = Cat()  # Object of Cat
-cow = Cow()  # Object of Cow
+Bus = bus()
+Car = car()
+Bike = bike()
 
-# Calling the make_sound method for each object
-# This demonstrates polymorphism — same method name, different behavior
-dog.make_sound()  # Output: Bark
-cat.make_sound()  # Output: Meow
-cow.make_sound()  # Output: Moo
-
+Bus.make_move()
+Car.make_move()
+Bike.make_move()
