@@ -1,3 +1,7 @@
+#When a function wants accept any number of nonkeyword arugument, you can use args
+#*args is stored as a tuple by default.
+
+
 def sum(*args):
     total = 0
     for num in args:
