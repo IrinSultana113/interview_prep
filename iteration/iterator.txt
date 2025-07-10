@@ -1,0 +1,10 @@
+The iterator works with a class. 
+It does not return all the values at a time.
+It returns one by one. 
+It has two methods: iter() and next() which are internally called __iter__() and __next__(). 
+The iter() method uses the object itself, which is returned as the iterator. 
+But it does not print the values by using the object. 
+That's why you can use the next() method. 
+It returns the values one by one and remembers the position. 
+If there is no value to return, then the next() method automatically raises stopiteration(). 
+In a real-time example, take one orange and squeeze it. Repeat it when no more oranges are stored. Then stop it.

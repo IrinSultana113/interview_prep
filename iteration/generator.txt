@@ -1,0 +1,9 @@
+The generator works with a function. 
+It returns the values using the yield keyword. 
+It does not return all the values at a time. 
+It returns one value, then pauses. 
+Then when called second, resumes and returns the second value. 
+It means generating items only when needed. 
+When it is done, it automatically stops. 
+You don’t need to store or update this data manually. 
+As a real-time example, imagine a juice machine. You press start. It automatically gives you one glass at a time using yield. It pauses, waiting for the next glass. 
